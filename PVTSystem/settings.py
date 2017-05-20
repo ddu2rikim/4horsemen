@@ -25,7 +25,7 @@ SECRET_KEY = '1)!wq&+e^pj+ok-_7*%@ap(-w_0ujx$%!rawt++3g!5i7@)khs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pvtsystem.pythonanywhere.com']
 
 
 # Application definition
@@ -131,3 +131,5 @@ LOGIN_REDIRECT_URL = '/account/profile/'
 
 EMAIL_HOST ='localhost'
 EMAIL_PORT = 1025
+
+SECURE_SSL_REDIRECT = True
