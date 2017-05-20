@@ -1,0 +1,54 @@
+{% extends "appointment/layout.html" %}
+
+{% block head %}
+<title>Appointment</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+        <h1>APPOINTMENT - LIST</h1>
+            {% if user.is_authenticated %}
+                {% if user.id == 1 %}
+			        <table class="table table-hover table-bordered">
+				        <a href="{% url "appointment:appointment_new" %}" class="btn btn-primary">Add Appointment</a>
+			        </table>
+                {% endif %}
+			<table class="table table-hover table-bordered">
+             <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Appoint Number</th>
+                        <th>First Name</th>
+                        <th>User ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                {% for appointment in appointment_list %}
+                {% if user.id == appointment.user.id or user.id == 1 %}
+                    <tr>
+                        <td width="130" align="center"><a href="{% url "appointment:appointment_detail" appointment.pk %}">{{ appointment.pk}}</a></td>
+                        <td>{{ appointment.app_id}}</td>
+                        <td>{{ appointment.doctor_id}}</td>
+                        <td>{{ appointment.user.id}}</td>
+                        </td>
+                    </tr>
+                    {% else %}
+            {% endif %}
+                {% endfor %}
+                 </tbody>
+			</table>
+
+			</table>
+             {% else %}
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/account/login/">Login</a></li>
+            <li><a href="/account/register">Register</a></li>
+          </ul>
+        {% endif %}
+		</div>
+	</div>
+</div>
+{% endblock %}

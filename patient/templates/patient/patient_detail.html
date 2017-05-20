@@ -1,0 +1,71 @@
+{% extends "patient/layout.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Patient ID : {{ patient.patient_id}}</h1>
+        <div class="form-group">
+            <label for="">First Name</label>
+            <input type="text" name="fname" value="{{ patient.fname }}" class="form-control" id="fname" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="">Middle Name</label>
+            <input type="text" name="Mname" value="{{ patient.mname }}" class="form-control" id="Mname" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="">Last Name</label>
+            <input type="text" name="lname" value="{{ patient.lname }}" class="form-control" id="lname" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="">Date of Birth</label>
+            <input type="text" name="mname" value="{{ patient.dob }}" class="form-control" id="dob" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="">Sex</label>
+            <input type="text" name="mname" value="{{ patient.sex }}" class="form-control" id="sex" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="">Address 1</label>
+            <input type="text" name="mname" value="{{ patient.addr1 }}" class="form-control" id="addr1" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="">Address 2</label>
+            <input type="text" name="mname" value="{{ patient.addr2 }}" class="form-control" id="addr2" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="">Address 3</label>
+            <input type="text" name="mname" value="{{ patient.addr3 }}" class="form-control" id="addr3" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="">City</label>
+            <input type="text" name="city" value="{{ patient.city }}" class="form-control" id="city" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="">State</label>
+            <input type="text" name="state" value="{{ patient.state }}" class="form-control" id="state" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="">Country</label>
+            <input type="text" name="country" value="{{ patient.country }}" class="form-control" id="country" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="">Telephone Number</label>
+            <input type="text" name="phone1" value="{{ patient.phone1 }}" class="form-control" id="phone1" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="">Phone2</label>
+            <input type="text" name="phone2" value="{{ patient.phone2 }}" class="form-control" id="phone2" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="">Phone3</label>
+            <input type="text" name="phone3" value="{{ patient.phone3 }}" class="form-control" id="phone3" placeholder="">
+        </div>
+          <hr/>
+          <a href="{% url "patient:patient_list" %}" class="btn btn-primary">List</a>
+          <a href="{% url "patient:patient_edit" patient.pk patient.pk %}" class="btn btn-primary">Edit</a>
+          <a href="{% url "patient:patient_delete" patient.pk patient.pk %}" class="btn btn-primary">Delete</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends "doctor/layout.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>DOCTOR - DETAIL </h1>
+        <div class="form-group">
+            <label for="">Doctor Number</label>
+            <input type="text" name="doctor_id" value="{{ doctor.doctor_id}}" class="form-control" id="fname" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">First Name</label>
+            <input type="text" name="First Name" value="{{ doctor.fname }}" class="form-control" id="fname" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Middle Name</label>
+            <input type="text" name="Mname" value="{{ doctor.mname }}" class="form-control" id="Mname" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Last Name</label>
+            <input type="text" name="lname" value="{{ doctor.lname }}" class="form-control" id="lname" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Date of Birth</label>
+            <input type="text" name="mname" value="{{ doctor.dob }}" class="form-control" id="dob" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Sex</label>
+            <input type="text" name="mname" value="{{ doctor.sex }}" class="form-control" id="sex" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Address 1</label>
+            <input type="text" name="mname" value="{{ doctor.addr1 }}" class="form-control" id="addr1" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Address 2</label>
+            <input type="text" name="mname" value="{{ doctor.addr2 }}" class="form-control" id="addr2" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Address 3</label>
+            <input type="text" name="mname" value="{{ doctor.addr3 }}" class="form-control" id="addr3" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">City</label>
+            <input type="text" name="city" value="{{ doctor.city }}" class="form-control" id="city" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">State</label>
+            <input type="text" name="state" value="{{ doctor.state }}" class="form-control" id="state" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Country</label>
+            <input type="text" name="country" value="{{ doctor.country }}" class="form-control" id="country" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Telephone Number</label>
+            <input type="text" name="phone1" value="{{ doctor.phone1 }}" class="form-control" id="phone1" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Phone2</label>
+            <input type="text" name="phone2" value="{{ doctor.phone2 }}" class="form-control" id="phone2" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Phone3</label>
+            <input type="text" name="phone3" value="{{ doctor.phone3 }}" class="form-control" id="phone3" placeholder="" disabled>
+        </div>
+          <hr/>
+          <a href="{% url "doctor:doctor_list" %}" class="btn btn-primary">List</a>
+          <a href="{% url "doctor:doctor_edit" doctor.pk doctor.pk %}" class="btn btn-primary">Edit</a>
+          <a href="{% url "doctor:doctor_delete" doctor.pk doctor.pk %}" class="btn btn-primary">Delete</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

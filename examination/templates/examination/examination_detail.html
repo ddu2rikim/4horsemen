@@ -1,0 +1,80 @@
+{% extends "examination/layout.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>EXAMINATION - DETAIL </h1>
+        <div class="form-group">
+            <label for="">Examination Number</label>
+            <input type="text" name="doctor_id" value="{{ examination.exam_id}}" class="form-control" id="fname" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Appointment Number</label>
+            <input type="text" name="First Name" value="{{ examination.app_id }}" class="form-control" id="fname" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Doctor Name</label>
+            <input type="text" name="Mname" value="{{ examination.doctor_id }}" class="form-control" id="Mname" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Last Name</label>
+            <input type="text" name="lname" value="{{ examination.app_id }}" class="form-control" id="lname" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Weight</label>
+            <input type="text" name="mname" value="{{ examination.weight }}" class="form-control" id="dob" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Temperature</label>
+            <input type="text" name="mname" value="{{ examination.temperature }}" class="form-control" id="sex" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Blood Pressure 1</label>
+            <input type="text" name="mname" value="{{ examination.blood_pressure }}" class="form-control" id="addr1" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Respiration</label>
+            <input type="text" name="mname" value="{{ examination.respiration }}" class="form-control" id="addr2" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Heart Rate</label>
+            <input type="text" name="mname" value="{{ examination.heart_rate }}" class="form-control" id="addr3" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Reflex</label>
+            <input type="text" name="city" value="{{ examination.reflex }}" class="form-control" id="city" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Visual Activity</label>
+            <input type="text" name="state" value="{{ examination.visual_activity }}" class="form-control" id="state" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Ears</label>
+            <input type="text" name="country" value="{{ examination.ears }}" class="form-control" id="country" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Skin Polar</label>
+            <input type="text" name="phone1" value="{{ examination.skin_polar }}" class="form-control" id="phone1" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Lungs</label>
+            <input type="text" name="phone2" value="{{ examination.lungs }}" class="form-control" id="phone2" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Throat</label>
+            <input type="text" name="phone3" value="{{ examination.throat }}" class="form-control" id="phone3" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Interview Note</label>
+            <input type="text" name="phone3" value="{{ examination.interview_note }}" class="form-control" id="phone3" placeholder="" disabled>
+        </div>
+          <hr/>
+          <a href="{% url "examination:examination_list" %}" class="btn btn-primary">List</a>
+          <a href="{% url "examination:examination_edit" examination.pk examination.pk %}" class="btn btn-primary">Edit</a>
+          <a href="{% url "examination:examination_delete" examination.pk examination.pk %}" class="btn btn-primary">Delete</a>
+          <a href="{% url "diagnosis:diagnosis_transfer" examination.pk examination.pk %}" class="btn btn-primary">Transfer to Doctor</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

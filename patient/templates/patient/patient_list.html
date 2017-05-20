@@ -1,0 +1,42 @@
+{% extends "patient/layout.html" %}
+
+{% block head %}
+<title>Patient</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+        <h1>Patient</h1>
+			<table class="table table-striped table-bordered">
+				<a href="{% url "patient:patient_new" %}" class="btn btn-primary">Add Patient</a>
+			</table>
+			<table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Patient Number</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Date of Birth</th>
+                    </tr>
+                </thead>
+                <tbody>
+			    {% for patient in patient_list %}
+                    <tr>
+                        <td width="130" align="center"><a href="{% url "patient:patient_detail" patient.pk %}">{{ patient.pk}}</a></td>
+                        <td>{{ patient.fname}}</td>
+                        <td>{{ patient.lname}}</td>
+                        <td>{{ patient.dob}}</td>
+                    </tr>
+			    {% endfor %}
+                </tbody>
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+
+
+

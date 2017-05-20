@@ -1,0 +1,83 @@
+{% extends "diagnosis/layout.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+        <h1>DIAGNOSIS - DETAIL </h1>
+      <div class="form-group">
+            <label for="">Diagnosis Number</label>
+            <input type="text" name="doctor_id" value="{{ diagnosis.exam_id}}" class="form-control" id="fname" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Appointment Number</label>
+            <input type="text" name="First Name" value="{{ diagnosis.app_id }}" class="form-control" id="fname" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Doctor Name</label>
+            <input type="text" name="Mname" value="{{ diagnosis.doctor_id }}" class="form-control" id="Mname" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Last Name</label>
+            <input type="text" name="lname" value="{{ diagnosis.app_id }}" class="form-control" id="lname" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Weight</label>
+            <input type="text" name="mname" value="{{ diagnosis.weight }}" class="form-control" id="dob" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Temperature</label>
+            <input type="text" name="mname" value="{{ diagnosis.temperature }}" class="form-control" id="sex" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Blood Pressure 1</label>
+            <input type="text" name="mname" value="{{ diagnosis.blood_pressure }}" class="form-control" id="addr1" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Respiration</label>
+            <input type="text" name="mname" value="{{ diagnosis.respiration }}" class="form-control" id="addr2" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Heart Rate</label>
+            <input type="text" name="mname" value="{{ diagnosis.heart_rate }}" class="form-control" id="addr3" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Reflex</label>
+            <input type="text" name="city" value="{{ diagnosis.reflex }}" class="form-control" id="city" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Visual Activity</label>
+            <input type="text" name="state" value="{{ diagnosis.visual_activity }}" class="form-control" id="state" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Ears</label>
+            <input type="text" name="country" value="{{ diagnosis.ears }}" class="form-control" id="country" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Skin Polar</label>
+            <input type="text" name="phone1" value="{{ diagnosis.skin_polar }}" class="form-control" id="phone1" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Lungs</label>
+            <input type="text" name="phone2" value="{{ diagnosis.lungs }}" class="form-control" id="phone2" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Throat</label>
+            <input type="text" name="phone3" value="{{ diagnosis.throat }}" class="form-control" id="phone3" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">ICD10 Code</label>
+            <input type="text" name="First Name" value="{{ diagnosis.icd10Code }}" class="form-control" id="fname" placeholder="" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Interview Note</label>
+            <input type="text" name="phone3" value="{{ diagnosis.interview_note }}" class="form-control" id="phone3" placeholder="" disabled>
+        </div>
+          <hr/>
+          <a href="{% url "diagnosis:diagnosis_list" %}" class="btn btn-primary">List</a>
+          <a href="{% url "diagnosis:diagnosis_edit" diagnosis.pk diagnosis.pk %}" class="btn btn-primary">Edit</a>
+          <a href="{% url "diagnosis:diagnosis_delete" diagnosis.pk diagnosis.pk %}" class="btn btn-primary">Delete</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

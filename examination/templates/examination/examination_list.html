@@ -1,0 +1,49 @@
+{% extends "examination/layout.html" %}
+
+{% block head %}
+<title>Examination</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+        <h1>EXAMINATION - LIST</h1>
+            {% if user.is_authenticated %}
+			<table class="table table-hover table-bordered">
+             <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Appoint Number</th>
+                        <th>First Name</th>
+                        <th>User ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                {% for examination in examination_list %}
+                {% if user.id == 1 %}
+                    <tr>
+                        <td width="130" align="center"><a href="{% url "examination:examination_detail" examination.pk %}">{{ examination.pk}}</a></td>
+                        <td>{{ examination.app_id}}</td>
+                        <td>{{ examination.doctor_id}}</td>
+                        <td>{{ examination.user.id}}</td>
+                        </td>
+                    </tr>
+                    {% else %}
+            {% endif %}
+                {% endfor %}
+                 </tbody>
+			</table>
+
+			</table>
+             {% else %}
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/account/login/">Login</a></li>
+            <li><a href="/account/register">Register</a></li>
+          </ul>
+        {% endif %}
+		</div>
+	</div>
+</div>
+{% endblock %}

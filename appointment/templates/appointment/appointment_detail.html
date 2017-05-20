@@ -1,0 +1,30 @@
+{% extends "appointment/layout.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+        <h1>APPOINTMENT - DETAIL</h1><br>
+          <hr/>
+      <div class="form-group">
+            <label for="">Appointment Number</label>
+            <input type="text" name="app_id" value="{{ appointment.app_id }}" class="form-control" id="app_id" placeholder="" disabled>
+      </div>
+      <div class="form-group">
+            <label for="">Doctor Name</label>
+            <input type="text" name="doctor_id" value="{{ appointment.doctor_id }}" class="form-control" id="doctor_id" placeholder="" disabled>
+      </div>
+      <div class="form-group">
+            <label for="">User Name</label>
+            <input type="text" name="user_id" value="{{ appointment.user }}" class="form-control" id="date" placeholder="" disabled>
+      </div>
+          <a href="{% url "appointment:appointment_list" %}" class="btn btn-primary">List</a>
+        {% if user.id == 1 %}
+          <a href="{% url "appointment:appointment_edit" appointment.pk appointment.pk %}" class="btn btn-primary">Edit</a>
+          <a href="{% url "appointment:appointment_delete" appointment.pk appointment.pk %}" class="btn btn-primary">Delete</a>
+          <a href="{% url "examination:examination_transfer" appointment.app_id appointment.user_id%}" class="btn btn-primary">Examination</a>
+        {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

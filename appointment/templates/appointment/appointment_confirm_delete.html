@@ -1,0 +1,22 @@
+{% extends "appointment/layout.html" %}
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<form action="" method="post">
+                {% csrf_token %}
+                <div class="alert alert-danger">
+                Are you really sure to delete it?
+                </div>
+                <table>
+                    {{ form.as_table }}
+                </table>
+                <input type="submit" value="Delete" class="btn btn-primary"/>
+                <a href="{% url "appointment:appointment_list" %}" class="btn btn-primary">Back to the List</a>
+            </form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

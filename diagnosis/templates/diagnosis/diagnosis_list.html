@@ -1,0 +1,50 @@
+{% extends "diagnosis/layout.html" %}
+
+{% block head %}
+<title>Diagnosis</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+        <h1>DIAGNOSIS - LIST</h1>
+        {% if user.is_authenticated %}
+			<table class="table table-hover table-bordered">
+            <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Appoint Number</th>
+                        <th>First Name</th>
+                        <th>User ID</th>
+                        <th>Date Of Bitrh</th>
+                    </tr>
+                </thead>
+                <tbody>
+			{% for diagnosis in diagnosis_list %}
+			{% if user.id == 1 %}
+					<tr>
+					<td width="130" align="center">
+						<a href="{% url "diagnosis:diagnosis_detail" diagnosis.pk %}">{{ diagnosis.pk}}</a></td>
+						<td>{{ diagnosis.app_id}}</td>
+                        <td>{{ diagnosis.doctor_id}}</td>
+                        <td>{{ diagnosis.user.id}}</td>
+                        <td>{{ diagnosis.icd10Code}}</td>
+					</td>
+				</tr>
+                {% else %}
+            {% endif %}
+			{% endfor %}
+             </tbody>
+			</table>
+        </table>
+        {% else %}
+         <ul class="nav navbar-nav navbar-right">
+            <li><a href="/account/login/">Login</a></li>
+            <li><a href="/account/register">Register</a></li>
+          </ul>
+        {% endif %}
+		</div>
+	</div>
+</div>
+{% endblock %}
